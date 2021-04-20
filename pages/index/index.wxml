@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container" bindtap="countClick">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+      <text>级别：王者</text>
+      <!-- <block>
+        <navigator url="../home/home">
+          <button style="background-color: #f96332; padding: 10rpx">进入个人页面</button>
+        </navigator>
+      </block> -->
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- Quick Start -->
+  <button type="primary" bindtap="openPage1" >打卡</button>
+   <!-- Progress -->
+   <mp-cells title="学习进度" style="width: 100%">
+    <mp-cell link hover value="英语" footer="" url="../course/course?title=英语">
+    </mp-cell>
+    <mp-cell link hover value="管理学原理" footer="" url="../course/course?title=管理学">
+    </mp-cell>
+    <mp-cell link value="物流学" footer="" url="../course/course?title=物流学">
+    </mp-cell>
+  </mp-cells>
+  <!-- Todos -->
+  <mp-cells title="待完成任务" style="width: 100%">
+    <mp-cell link hover value="当日50个单词" footer="">
+    </mp-cell>
+    <mp-cell link hover value="管理学原理知识点" footer="" url="../home">
+    </mp-cell>
+    <mp-cell link  value="物流学知识点" footer="" url="../home">
+    </mp-cell>
+  </mp-cells>
+ 
+</view>

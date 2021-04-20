@@ -1,0 +1,27 @@
+/* pages/course/course.wxss */
+ec-canvas {
+  width: 100%;
+  height: 50%;
+}
+
+.move-container {
+  width: 100%;
+  /* min-height: 500px; */
+}
+
+#mychart-dom-move-bar {
+  width: 95%;
+  height: 200px;
+  /* margin: 20px 15%; */
+  border: 1px solid #eee;
+  display: block;
+}
+
+.move-container .text {
+  margin-bottom: 20px;
+}
+
+.move-container text {
+  margin: 10px;
+  display: block;
+}
