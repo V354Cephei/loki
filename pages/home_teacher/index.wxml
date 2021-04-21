@@ -1,2 +1,17 @@
 <!--pages/home_teacher/index.wxml-->
-<text>pages/home_teacher/index.wxml</text>
+<view>
+  <text>pages/home_teacher/index.wxml</text>
+  <text>专业课老师页面</text>
+</view>
+
+<view>
+  <text>上课日历</text>
+</view>
+
+<view>
+  <text>学生提问待回答</text>
+</view>
+
+<view>
+  <text>学生学习进度</text>
+</view>

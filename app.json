@@ -6,7 +6,8 @@
     "pages/review/index",
     "pages/course/index",
     "pages/home_student/index",
-    "pages/home_teacher/index"
+    "pages/home_teacher/index",
+    "pages/home_advisor/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

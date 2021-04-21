@@ -1,43 +1,47 @@
-<!--pages/home.wxml-->
-<view class="container">
-  <!-- User information  -->
-<view class="userinfo">
-  <view class="top">
-    <view class="center">
-      <view class="center_top">
-        <view class="center_img">
-          <!-- <image src="../../static/info_img.jpg"></image> -->
-          <open-data type="userAvatarUrl" class="user_head"></open-data>
-        </view>
-        <view class="center_info">
-          <open-data type="userNickName"></open-data>
-        </view>
+<!--index.wxml-->
+<view class="container" bindtap="countClick">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
       </view>
-      <view class="center_down">
-        <view class="center_rank">
-          <!-- <image class="rank_icon" src="../../static/rank.png"></image> -->
-          <text class="rank_text">排名: 王者</text>
-        </view>
-        <view class="center_score">
-          <!-- <image class="rank_icon" src="../../static/points.png"></image> -->
-          <text class="rank_text">积分：18888</text>
-        </view>
-      </view>
-    </view>
-    <!-- <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image> -->
+      <open-data type="userNickName"></open-data>
+      <text>级别：王者</text>
+      <!-- <block>
+        <navigator url="../home/home">
+          <button style="background-color: #f96332; padding: 10rpx">进入个人页面</button>
+        </navigator>
+      </block> -->
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
   </view>
+  <!-- Quick Start -->
+  <button type="primary" bindtap="openPage1" >打卡</button>
+   <!-- Progress -->
+   <mp-cells title="学习进度" style="width: 100%">
+    <mp-cell link hover value="英语" footer="" url="../course/index?title=英语">
+    </mp-cell>
+    <mp-cell link hover value="管理学原理" footer="" url="../course/index?title=管理学">
+    </mp-cell>
+    <mp-cell link value="物流学" footer="" url="../course/index?title=物流学">
+    </mp-cell>
+  </mp-cells>
+  <!-- Todos -->
+  <mp-cells title="待完成任务" style="width: 100%">
+    <mp-cell link hover value="当日50个单词" footer="">
+    </mp-cell>
+    <mp-cell link hover value="管理学原理知识点" footer="" url="../home">
+    </mp-cell>
+    <mp-cell link  value="物流学知识点" footer="" url="../home">
+    </mp-cell>
+  </mp-cells>
+ 
 </view>
-
-  <!-- Tasks -->
-  <view class="tasks">
-    <view><label>待完成任务：</label></view>
-    <text>开始背单词</text>
-  </view>
-
-  <!-- Progress -->
-  <view class="progress">
-    <view><label>学习进度：</label></view>
-    <text>复习知识点</text>
-  </view>
-</view>
-
