@@ -25,23 +25,23 @@
   </view>
   <!-- Quick Start -->
   <button type="primary" bindtap="openPage1" >打卡</button>
-   <!-- Progress -->
-   <mp-cells title="学习进度" style="width: 100%">
-    <mp-cell link hover value="英语" footer="" url="../course/index?title=英语">
+  <!-- 页面 -->
+<view style="width: 100%">
+  <mp-cells title="页面入口测试" >
+    <mp-cell link hover value="学生页面" footer="" url="../home_student/index">
     </mp-cell>
-    <mp-cell link hover value="管理学原理" footer="" url="../course/index?title=管理学">
+    <mp-cell link hover value="班主任页面" footer="" url="../home_advisor/index">
     </mp-cell>
-    <mp-cell link value="物流学" footer="" url="../course/index?title=物流学">
+    <mp-cell link value="专业课老师页面" footer="" url="../home_teacher/index">
+    </mp-cell>
+    <mp-cell link value="课程进度页" footer="" url="../course/index">
+    </mp-cell>
+    <mp-cell link value="知识点记忆页" footer="" url="../review/index">
+    </mp-cell>
+    <mp-cell link value="闪现页面" footer="" url="../splash/index">
+    </mp-cell>
+    <mp-cell link value="logs" footer="" url="../logs/logs">
     </mp-cell>
   </mp-cells>
-  <!-- Todos -->
-  <mp-cells title="待完成任务" style="width: 100%">
-    <mp-cell link hover value="当日50个单词" footer="">
-    </mp-cell>
-    <mp-cell link hover value="管理学原理知识点" footer="" url="../home">
-    </mp-cell>
-    <mp-cell link  value="物流学知识点" footer="" url="../home">
-    </mp-cell>
-  </mp-cells>
- 
+</view>
 </view>
