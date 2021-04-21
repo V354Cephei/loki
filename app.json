@@ -2,11 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/home",
-    "pages/splash/splash",
-    "pages/review/review",
-    "pages/course/course"
-    
+    "pages/splash/index",
+    "pages/review/index",
+    "pages/course/index",
+    "pages/home_student/index",
+    "pages/home_teacher/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -27,11 +27,11 @@
   <button type="primary" bindtap="openPage1" >打卡</button>
    <!-- Progress -->
    <mp-cells title="学习进度" style="width: 100%">
-    <mp-cell link hover value="英语" footer="" url="../course/course?title=英语">
+    <mp-cell link hover value="英语" footer="" url="../course/index?title=英语">
     </mp-cell>
-    <mp-cell link hover value="管理学原理" footer="" url="../course/course?title=管理学">
+    <mp-cell link hover value="管理学原理" footer="" url="../course/index?title=管理学">
     </mp-cell>
-    <mp-cell link value="物流学" footer="" url="../course/course?title=物流学">
+    <mp-cell link value="物流学" footer="" url="../course/index?title=物流学">
     </mp-cell>
   </mp-cells>
   <!-- Todos -->
