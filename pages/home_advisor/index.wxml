@@ -1,0 +1,13 @@
+<!--pages/home_advisor/index.wxml-->
+<view>
+  <text>pages/home_advisor/index.wxml</text>
+  <text>班主任页面</text>
+</view>
+
+<view>
+  <text>学生打卡情况和需要追踪提醒的学生</text>
+</view>
+
+<view>
+  <text>提问待解答</text>
+</view>
