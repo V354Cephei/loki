@@ -5,13 +5,13 @@
     "pages/splash/index",
     "pages/repetition/index",
     "pages/course/index",
-    "pages/home_student/index",
-    "pages/home_teacher/index",
-    "pages/home_advisor/index"
+    "pages/student/index",
+    "pages/teacher/index",
+    "pages/advisor/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f96332",
+    "navigationBarBackgroundColor": "#252f40",
     "navigationBarTitleText": "日拱一卒",
     "navigationBarTextStyle": "white"
   },

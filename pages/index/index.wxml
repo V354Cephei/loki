@@ -24,15 +24,15 @@
     </block>
   </view>
   <!-- Quick Start -->
-  <button type="primary" bindtap="openPage1" >打卡</button>
+  <button type="primary" bindtap="openPage1" style="background: linear-gradient(310deg,#7928ca,#ff0080);">打卡</button>
   <!-- 页面 -->
 <view style="width: 100%">
   <mp-cells title="页面入口测试" >
-    <mp-cell link hover value="学生页面(student)" footer="" url="../home_student/index">
+    <mp-cell link hover value="学生页面(student)" footer="" url="../student/index">
     </mp-cell>
-    <mp-cell link hover value="班主任页面(advisor)" footer="" url="../home_advisor/index">
+    <mp-cell link hover value="班主任页面(advisor)" footer="" url="../advisor/index">
     </mp-cell>
-    <mp-cell link value="专业课老师页面(teacher)" footer="" url="../home_teacher/index">
+    <mp-cell link value="专业课老师页面(teacher)" footer="" url="../teacher/index">
     </mp-cell>
     <mp-cell link value="课程进度页(course)" footer="" url="../course/index">
     </mp-cell>

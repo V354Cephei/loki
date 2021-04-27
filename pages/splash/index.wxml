@@ -1,2 +1,2 @@
 <!--pages/home/splash.wxml-->
-<text>pages/home/splash.wxml</text>
+<image style="height:100%;" mode='widthFix' src="../../assets/images/summer-post.png"></image>

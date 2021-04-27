@@ -6,12 +6,11 @@
         <open-data type="userAvatarUrl"></open-data>
       </view>
       <open-data type="userNickName"></open-data>
-      <text>级别：王者</text>
-      <!-- <block>
-        <navigator url="../home/home">
-          <button style="background-color: #f96332; padding: 10rpx">进入个人页面</button>
-        </navigator>
-      </block> -->
+      <view style="align-items: center; display: flex; flex-direction: row;">
+        <image class="badge" src="../../assets/images/L1.jpg"></image>
+        <text style="padding: 5rpx">白银圣斗士</text>
+      </view>
+      
     </block>
     <block wx:elif="{{!hasUserInfo}}">
       <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
@@ -24,24 +23,32 @@
     </block>
   </view>
   <!-- Quick Start -->
-  <button type="primary" bindtap="openPage1" >打卡</button>
+  <button type="primary" bindtap="" style="margin:0.25em;background: linear-gradient(310deg,#7928ca,#ff0080);">打卡</button>
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">学习进度</button>
+    <!-- <button type="primary" bindtap="">打卡</button>
+    <button type="default" bindtap="">学习进度</button> -->
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">竞争力分析</button>
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">提问</button>
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">排名</button>
+
+<view></view>
    <!-- Progress -->
-   <mp-cells title="学习进度" style="width: 100%">
+   <!-- <mp-cells title="学习进度" style="width: 100%">
     <mp-cell link hover value="英语" footer="" url="../course/index?title=英语">
     </mp-cell>
     <mp-cell link hover value="管理学原理" footer="" url="../course/index?title=管理学">
     </mp-cell>
     <mp-cell link value="物流学" footer="" url="../course/index?title=物流学">
     </mp-cell>
-  </mp-cells>
+  </mp-cells> -->
   <!-- Todos -->
-  <mp-cells title="待完成任务" style="width: 100%">
+  <!-- <mp-cells title="待完成任务" style="width: 100%">
     <mp-cell link hover value="当日50个单词" footer="">
     </mp-cell>
     <mp-cell link hover value="管理学原理知识点" footer="" url="../home">
     </mp-cell>
     <mp-cell link  value="物流学知识点" footer="" url="../home">
     </mp-cell>
-  </mp-cells>
+  </mp-cells> -->
  
 </view>

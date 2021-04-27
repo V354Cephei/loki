@@ -1,0 +1,47 @@
+/**index.wxss**/
+.badge {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* color: #aaa; */
+  padding: 25px;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  /* width: 128rpx;
+  height: 128rpx; */
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.btn-secondary {
+  color: #000;
+  background-color: #8392ab;
+  border-color: #8392ab;
+}
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #67748e;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .75rem 1.5rem;
+  font-size: .75rem;
+  border-radius: .5rem;
+  transition: all .15s ease-in;
+}
