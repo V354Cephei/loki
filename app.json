@@ -7,7 +7,8 @@
     "pages/course/index",
     "pages/student/index",
     "pages/teacher/index",
-    "pages/advisor/index"
+    "pages/advisor/index",
+    "pages/student/flipcard"
   ],
   "window": {
     "backgroundTextStyle": "light",

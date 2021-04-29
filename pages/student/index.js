@@ -13,8 +13,8 @@ Page({
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
   },
 
-  openPage1: function(){ 
-    wx.navigateTo({ url: '/pages/line/index', }) 
+  openFlipCard: function(){ 
+    wx.navigateTo({ url: '/pages/student/flipcard', }) 
   },
 
   countClick: function() {

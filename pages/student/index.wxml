@@ -23,13 +23,13 @@
     </block>
   </view>
   <!-- Quick Start -->
-  <button type="primary" bindtap="" style="margin:0.25em;background: linear-gradient(310deg,#7928ca,#ff0080);">打卡</button>
-    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">学习进度</button>
-    <!-- <button type="primary" bindtap="">打卡</button>
-    <button type="default" bindtap="">学习进度</button> -->
-    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">竞争力分析</button>
-    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">提问</button>
-    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);">排名</button>
+  <!-- <button type="primary" bindtap="openFlipCard" style="margin:0.25em;background: linear-gradient(310deg,#7928ca,#ff0080);box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);">打卡</button>
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);">学习进度</button> -->
+    <button type="primary" size="mini" bindtap="">打卡</button>
+    <button type="default" bindtap="">学习进度</button>
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);">竞争力分析</button>
+    <button bindtap="" class="btn bg-gradient-info" >提问</button>
+    <button type="primary" bindtap="" style="margin:0.25em;background:linear-gradient(310deg,#627594,#a8b8d8);box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);">排名</button>
 
 <view></view>
    <!-- Progress -->

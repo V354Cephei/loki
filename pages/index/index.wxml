@@ -24,7 +24,6 @@
     </block>
   </view>
   <!-- Quick Start -->
-  <button type="primary" bindtap="openPage1" style="background: linear-gradient(310deg,#7928ca,#ff0080);">打卡</button>
   <!-- 页面 -->
 <view style="width: 100%">
   <mp-cells title="页面入口测试" >
