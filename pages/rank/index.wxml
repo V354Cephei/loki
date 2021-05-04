@@ -1,0 +1,9 @@
+<!--pages/rank/index.wxml-->
+<view>
+  <text>英雄榜</text>
+  <van-cell title="王者" icon="location-o" />
+  <van-cell title="钻石" icon="location-o" />
+<van-cell title="黄金" icon="location-o" />
+<van-cell title="白银" icon="location-o" />
+<van-cell title="青铜" icon="location-o" />
+</view>

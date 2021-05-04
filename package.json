@@ -1,0 +1,25 @@
+{
+  "name": "loki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V354Cephei/loki.git"
+  },
+  "author": "Rui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/V354Cephei/loki/issues"
+  },
+  "homepage": "https://github.com/V354Cephei/loki#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.6.8"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.3.2"
+  }
+}

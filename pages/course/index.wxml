@@ -12,7 +12,5 @@
   <!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ lineEC1 }}"></ec-canvas> -->
   <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ lineEC1 }}"></ec-canvas>
 
-  <view><text>知识点均衡程度(Radar Chart)</text></view>
-  <!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ radarEC1 }}"></ec-canvas> -->
-  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ radarEC1 }}"></ec-canvas>
+  
 </view>

@@ -8,7 +8,11 @@
     "pages/student/index",
     "pages/teacher/index",
     "pages/advisor/index",
-    "pages/student/flipcard"
+    "pages/student/flipcard",
+    "pages/sadmin/index",
+    "pages/rank/index",
+    "pages/student/strength",
+    "pages/questions/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,7 +20,6 @@
     "navigationBarTitleText": "日拱一卒",
     "navigationBarTextStyle": "white"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "debug": true,
   "useExtendedLib": {

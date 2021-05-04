@@ -31,6 +31,8 @@
     </mp-cell>
     <mp-cell link hover value="班主任页面(advisor)" footer="" url="../advisor/index">
     </mp-cell>
+    <mp-cell link hover value="学校管理员页面(school-admin)" footer="" url="../sadmin/index">
+    </mp-cell>
     <mp-cell link value="专业课老师页面(teacher)" footer="" url="../teacher/index">
     </mp-cell>
     <mp-cell link value="课程进度页(course)" footer="" url="../course/index">
@@ -38,6 +40,8 @@
     <mp-cell link value="知识点记忆页(repetition)" footer="" url="../repetition/index">
     </mp-cell>
     <mp-cell link value="封面(splash)" footer="" url="../splash/index">
+    </mp-cell>
+    <mp-cell link value="英雄榜" footer="" url="../rank/index">
     </mp-cell>
     <mp-cell link value="logs" footer="" url="../logs/logs">
     </mp-cell>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "van-divider": "@vant/weapp/divider/index"
+  }
+}

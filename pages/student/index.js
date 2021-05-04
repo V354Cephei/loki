@@ -17,6 +17,22 @@ Page({
     wx.navigateTo({ url: '/pages/student/flipcard', }) 
   },
 
+  openMyRankList: function(){ 
+    wx.navigateTo({ url: '/pages/rank/index', }) 
+  },
+
+  openMyProgress: function(){ 
+    wx.navigateTo({ url: '/pages/course/index', }) 
+  },
+
+  openMyQustionList: function(){ 
+    wx.navigateTo({ url: '/pages/questions/index', }) 
+  },
+
+  openMyStrength: function(){ 
+    wx.navigateTo({ url: '/pages/student/strength', }) 
+  },
+
   countClick: function() {
     this.setData({
       count : this.data.count + 1

@@ -1,0 +1,28 @@
+<!--pages/student/strength.wxml-->
+<view>
+  <view><text>能力均衡图(Radar Chart)</text></view>
+  <!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ radarEC1 }}"></ec-canvas> -->
+  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ radarEC1 }}"></ec-canvas>
+  <van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
+>
+学科1
+</van-divider>
+  <view>
+    <text>是一个喜欢按自己的人生哲学走路的人。你不轻易改变自己的生活习惯。固执已见是你性格上的突出特点，同时也是你的主要缺点。平时温文尔雅，一旦受到触怒，你会变得令人望而生畏。</text>
+  </view>
+  <van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+  学科2
+</van-divider>
+  <text>是一个喜欢按自己的人生哲学走路的人。你不轻易改变自己的生活习惯。固执已见是你性格上的突出特点，同时也是你的主要缺点。平时温文尔雅，一旦受到触怒，你会变得令人望而生畏。</text>
+  <van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
+>
+学科3
+</van-divider>
+  <text>是一个喜欢按自己的人生哲学走路的人。你不轻易改变自己的生活习惯。固执已见是你性格上的突出特点，同时也是你的主要缺点。平时温文尔雅，一旦受到触怒，你会变得令人望而生畏。</text>
+</view>

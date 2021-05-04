@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    isDebug: true,
     cards: [], // 卡片数据，一个包含所有卡片对象的数组
     removed_cards: [],// 存放已经移除的卡片的索引数据，如果索引填充了其他卡片，需要将该索引移出
     transition: true,//是否开启过渡动画
@@ -95,11 +96,24 @@ Page({
   cardSwipe(e) {
     const { direction, swiped_card_index, current_cursor } = e.detail
     console.log(e.detail)
-    wx.showToast({
-      title: `卡片${swiped_card_index + 1}向${direction === 'left' ? '左' : '右'}滑`,
-      icon: 'none',
-      duration: 1000
-    })
+    if (direction === 'left' ) {
+      wx.showToast({
+        title: "不会",
+        icon: 'error',
+        duration: 1000
+      });
+    } else {
+      wx.showToast({
+        title: "简单",
+        icon: 'success',
+        duration: 1000
+      });
+    }
+    // wx.showToast({
+    //   title: `卡片${swiped_card_index + 1}向${direction === 'left' ? '左' : '右'}滑`,
+    //   icon: 'none',
+    //   duration: 1000
+    // })
     this.setData({
       current_cursor
     })

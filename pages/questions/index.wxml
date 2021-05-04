@@ -1,0 +1,27 @@
+<!--pages/questions/index.wxml-->
+<view>
+  <text>我提出的问题</text>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="什么是市场？" name="1">
+      提供多样店铺模板，快速搭建网上商城
+    </van-collapse-item>
+    <van-collapse-item title="什么是管理？" name="2">
+      网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+    </van-collapse-item>
+    <van-collapse-item title="生命要如何分类，分层？" name="3">
+      简单的描述信息，比如什么事1.0的生命，什么是更高级的生命？
+    </van-collapse-item>
+  </van-collapse>
+</view>
+
+<view>
+  <text>公共的问题池</text>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="什么是管理？" name="1">
+      简单的描述一下
+    </van-collapse-item>
+    <van-collapse-item title="管理都有哪些内容？" name="2">
+      简单的描述一下
+    </van-collapse-item>
+  </van-collapse>
+</view>
