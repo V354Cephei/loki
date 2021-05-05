@@ -9,7 +9,7 @@ Page({
     removed_cards: [],// 存放已经移除的卡片的索引数据，如果索引填充了其他卡片，需要将该索引移出
     transition: true,//是否开启过渡动画
     circling: false, // 是否列表循环
-    rotate_deg: 0,// 整个滑动过程旋转角度
+    rotate_deg: 90,// 整个滑动过程旋转角度
     slide_duration: 200,// 手指离开屏幕后滑出界面时长，单位(ms)毫秒
     show_cards: 3,// 显示几张卡片
     thershold: 60,// 松手后滑出界面阈值，单位px
@@ -96,6 +96,9 @@ Page({
   cardSwipe(e) {
     const { direction, swiped_card_index, current_cursor } = e.detail
     console.log(e.detail)
+    if (current_cursor === this.data.cards.length) {
+      wx.navigateTo({ url: '/pages/student/result', }) 
+    }
     if (direction === 'left' ) {
       wx.showToast({
         title: "不会",

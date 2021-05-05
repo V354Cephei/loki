@@ -12,7 +12,8 @@
     "pages/sadmin/index",
     "pages/rank/index",
     "pages/student/strength",
-    "pages/questions/index"
+    "pages/questions/index",
+    "pages/student/result"
   ],
   "window": {
     "backgroundTextStyle": "light",

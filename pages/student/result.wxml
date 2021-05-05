@@ -1,0 +1,8 @@
+<!--pages/student/result.wxml-->
+<view class="container">
+  <text>pages/student/result.wxml</text>
+<text>今天已经消灭掉20个单词</text>
+<text>再接再厉</text>
+<view class="btn bg-gradient-primary">再来20个</view>
+
+</view>
