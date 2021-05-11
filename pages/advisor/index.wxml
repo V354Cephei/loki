@@ -1,13 +1,29 @@
-<!--pages/home_advisor/index.wxml-->
-<view>
-  <text>班主任页面</text>
-  <text>pages/home_advisor/index.wxml</text>
-</view>
-
-<view>
-  <text>学生打卡统计和需要追踪提醒的学生</text>
-</view>
-
-<view>
-  <text>提问待解答</text>
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+      <view style="align-items: center; display: flex; flex-direction: row;">
+        <text style="padding: 5rpx; color: gold">班主任老师</text>
+      </view>
+      
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- Quick Start -->
+  <!-- <van-button type="primary" size="normal" bindtap="openFlipCard">打卡</van-button> -->
+  <view class="btn bg-gradient-primary mt-10" bindtap="" >每日跟进</view>
+  <view class="btn bg-gradient-secondary mt-10" bindtap="">学员评估</view>
+  <view class="btn bg-gradient-secondary mt-10" bindtap="">问题解答</view>
 </view>

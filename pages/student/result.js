@@ -16,6 +16,27 @@ Page({
   },
 
   /**
+   * 返回主页
+   */
+  goHome: function(){ 
+    wx.redirectTo({ url: '/pages/student/index', }); 
+  },
+
+  /**
+   * 再来一局
+   */
+  playAgain: function(){ 
+    wx.redirectTo({ url: '/pages/student/flipcard', }) 
+  },
+
+  /**
+   * 看进度
+   */
+  openMyProgress: function(){ 
+    wx.redirectTo({ url: '/pages/course/index', }) 
+  },
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

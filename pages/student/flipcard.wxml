@@ -5,9 +5,9 @@
     transition="{{transition}}" scale-ratio="{{scale_ratio}}" circling="{{circling}}" up-height="{{up_height}}"
     rotate-deg="{{rotate_deg}}" slide-duration="{{slide_duration}}">
   </card-swipe>
-  <view style="display: flex">
-    <view class="btn bg-gradient-danger mt-10"> {{"<-"}} 不会</view>
-    <view class="btn bg-gradient-success mt-10">简单{{"->"}}</view>
+  <view style="display: flex; justify-content: space-between;">
+    <view style="padding: 0 20rpx 0 10rpx; color: red;"> {{"<-"}} 不会(左滑)</view>
+    <view style="padding: 0 10rpx 0 20rpx; color: green">简单(右滑){{"->"}}</view>
   </view>
   <view hidden="{{isDebug}}" class="settings" style="display: block;">
     <view hidden="{{isDebug}}" class="label btn-area">

@@ -13,7 +13,8 @@
     "pages/rank/index",
     "pages/student/strength",
     "pages/questions/index",
-    "pages/student/result"
+    "pages/student/result",
+    "pages/users/register"
   ],
   "window": {
     "backgroundTextStyle": "light",

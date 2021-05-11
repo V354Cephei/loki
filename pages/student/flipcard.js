@@ -97,15 +97,18 @@ Page({
     const { direction, swiped_card_index, current_cursor } = e.detail
     console.log(e.detail)
     if (current_cursor === this.data.cards.length) {
-      wx.navigateTo({ url: '/pages/student/result', }) 
+      wx.redirectTo({ url: '/pages/student/result', }) 
     }
     if (direction === 'left' ) {
+      // keep it in current list
       wx.showToast({
         title: "不会",
         icon: 'error',
         duration: 1000
       });
     } else {
+      // remove it from current list
+      console.log("removed " + current_cursor + " " + this.data.cards[current_cursor].title);
       wx.showToast({
         title: "简单",
         icon: 'success',

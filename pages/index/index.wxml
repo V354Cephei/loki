@@ -25,16 +25,20 @@
   </view>
   <!-- Quick Start -->
   <!-- 页面 -->
-<view style="width: 100%">
+<view style="width: 90%">
   <mp-cells title="页面入口测试" >
     <mp-cell link hover value="学生页面(student)" footer="" url="../student/index">
     </mp-cell>
     <mp-cell link hover value="班主任页面(advisor)" footer="" url="../advisor/index">
     </mp-cell>
-    <mp-cell link hover value="学校管理员页面(school-admin)" footer="" url="../sadmin/index">
-    </mp-cell>
     <mp-cell link value="专业课老师页面(teacher)" footer="" url="../teacher/index">
     </mp-cell>
+    <mp-cell link hover value="学校管理员页面(school-admin)" footer="" url="../sadmin/index">
+    </mp-cell>
+    <mp-cell link hover value="注册页面(register)" footer="" url="../user/register">
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="其它页面">
     <mp-cell link value="课程进度页(course)" footer="" url="../course/index">
     </mp-cell>
     <mp-cell link value="知识点记忆页(repetition)" footer="" url="../repetition/index">
