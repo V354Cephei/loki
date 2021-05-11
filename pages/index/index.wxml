@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container" bindtap="countClick">
+<view class="container">
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
       <view class="userinfo-avatar" bindtap="bindViewTap">
@@ -25,7 +25,7 @@
   </view>
   <!-- Quick Start -->
   <!-- 页面 -->
-<view style="width: 90%">
+<view>
   <mp-cells title="页面入口测试" >
     <mp-cell link hover value="学生页面(student)" footer="" url="../student/index">
     </mp-cell>
@@ -38,7 +38,7 @@
     <mp-cell link hover value="注册页面(register)" footer="" url="../user/register">
     </mp-cell>
   </mp-cells>
-  <mp-cells title="其它页面">
+  <!-- <mp-cells title="其它页面">
     <mp-cell link value="课程进度页(course)" footer="" url="../course/index">
     </mp-cell>
     <mp-cell link value="知识点记忆页(repetition)" footer="" url="../repetition/index">
@@ -49,6 +49,6 @@
     </mp-cell>
     <mp-cell link value="logs" footer="" url="../logs/logs">
     </mp-cell>
-  </mp-cells>
+  </mp-cells> -->
 </view>
 </view>

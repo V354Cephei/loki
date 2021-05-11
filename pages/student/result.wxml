@@ -1,9 +1,9 @@
 <!--pages/student/result.wxml-->
 <view class="container">
 <image style="width: 80%; margin: 20rpx" src="../../assets/images/break.png"></image>
-<text style="font-size: 50rpx; color: gold;">再接再厉</text>
-<text style="font-size: 30rpx; font-weight: 700; color: orange;">今天消灭了：20个单词</text>
+<!-- <text style="font-size: 50rpx; color: gold;">再接再厉</text> -->
+<text style="font-size: 50rpx; color: orange">今天消灭了{{n}}个单词</text>
 <view class="btn bg-gradient-primary mt-10" bind:tap="playAgain">不尽兴，再来</view>
-<view class="btn bg-gradient-success mt-10" bind:tap="goHome">返回</view>
-<view class="btn bg-gradient-info mt-10" bind:tap="openMyProgress">看进度</view>
+<view class="btn bg-gradient-success mt-10" bind:tap="goHome">返回主页</view>
+<view class="btn bg-gradient-info mt-10" bind:tap="openMyProgress">看学习进度</view>
 </view>
