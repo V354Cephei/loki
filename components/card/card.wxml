@@ -1,12 +1,15 @@
-<view class="card" bind:tap="showBody">
+<view class="card bg-gradient-primary" bind:tap="showBody">
     <!-- <view class="top" style="height: 600rpx;">
         <image lazy-load="{{true}}" src="{{card.src}}" style="width: 100%; height: 100%; border-top-left-radius: 10rpx; border-top-right-radius: 10rpx;" mode="aspectFill" />
     </view> -->
-
-    <view class="bottom">
-        <text id="item1" style="font-size: 72rpx; color: #f53939;">{{card.title}}</text>
+    <view class="card-header">
+        <text>转本词汇</text>
+    </view>
+    <view class="card-body">
+        <text id="item1" style="font-size: 120rpx; color: #FFFFFF;">{{card.title}}</text>
+        <mp-icon icon="voice" color="white" size="{{25}}" style="padding: 0 0 20rpx 0;"></mp-icon>
         <!-- <scroll-view scroll-y style="height: 300rpx; background-color: red"> -->
-            <rich-text hidden="{{isHidden}}" nodes="{{card.body}}"></rich-text>
+            <rich-text hidden="{{isHidden}}" nodes="{{card.body}}" style="color: #FFFFFF;"></rich-text>
         <!-- </scroll-view> -->
     </view>
 </view>

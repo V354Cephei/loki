@@ -24,7 +24,7 @@ Page({
     const results = [
         {
           title: "worth",
-          body: "有。。。的价值，值得。。。的",
+          body: "相当于…价值,值…钱<br>sales worth 200m pounds a year<br>每年价值2亿英镑的销售额",
         },
         {
           title: 'worldwide',

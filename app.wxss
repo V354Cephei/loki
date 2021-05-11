@@ -37,16 +37,16 @@
   transition: all .15s ease-in;
 }
 
-.bg-gradient-primary {
-  background-image: linear-gradient(310deg,#7928ca,#ff0080);
+.bg-gradient-warning {
+  background: linear-gradient(310deg,#7928ca,#ff0080);
 }
 
 .bg-gradient-secondary {
-  background-image: linear-gradient(310deg,#627594,#a8b8d8);
+  background: linear-gradient(310deg,#627594,#a8b8d8);
 }
 
 .bg-gradient-info {
-  background-image: linear-gradient(310deg,#2152ff,#21d4fd);
+  background: linear-gradient(310deg,#2152ff,#21d4fd);
 }
 
 .bg-gradient-success {
@@ -54,11 +54,11 @@
 }
 
 .bg-gradient-danger {
-  background-image: linear-gradient(310deg,#ea0606,#ff667c);
+  background: linear-gradient(310deg,#ea0606,#ff667c);
 }
 
-.bg-gradient-warning {
-  background-image: linear-gradient(310deg,#f53939,#fbcf33);
+.bg-gradient-primary {
+  background: linear-gradient(310deg,#f53939,#fbcf33);
 }
 
 .mt-10 {

@@ -27,6 +27,10 @@ Component({
       });
     }
   },
-
-
+  /** 
+   * 使用app.wxss中定义的全局样式
+   */
+  options: {
+    addGlobalClass: true,
+  }
 })
