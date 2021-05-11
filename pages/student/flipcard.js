@@ -13,7 +13,7 @@ Page({
     slide_duration: 200, // 手指离开屏幕后滑出界面时长，单位(ms)毫秒
     show_cards: 3, // 显示几张卡片
     thershold: 60, // 松手后滑出界面阈值，单位px
-    scale_ratio: 0.07, // 下层卡片收缩力度
+    scale_ratio: 0.05, // 下层卡片收缩力度
     up_height: 40, // 下层卡片下移高度，单位rpx
   },
   onLoad: function () {
