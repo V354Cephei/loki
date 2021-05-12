@@ -27,24 +27,24 @@ Page({
           body: "相当于…价值,值…钱<br>sales worth 200m pounds a year<br>每年价值2亿英镑的销售额",
         },
         {
-          title: 'worldwide',
-          body: '遍及全球的，世界范围的'
+          title: 'get',
+          body: '获得；得到；收获<br>get a prize<br>得奖'
         },
         {
-          title: 'worthwhile',
-          body: '值得做的'
+          title: 'confidence',
+          body: '信任<br>build confidence in oneself<br>建立自信'
         },
         {
-          title: 'worthy',
-          body: '杰出人物，有价值的，值得的'
+          title: 'romance',
+          body: '浪漫故事；浪漫作品<br>a starlet of seven romances<br>拍过七部爱情电影的小女星'
         },
         {
           title: 'wonderful',
-          body: '美妙的，精彩的'
+          body: '美妙的，精彩的，奇特的<br>a wonderful sight<br>奇特的景象 '
         },
         {
-          title: 'worried',
-          body: '担心的，烦恼的'
+          title: 'zealot',
+          body: '狂热者；热心者<br>a religious zealot<br>宗教狂热分子'
         }
       ];
       results.forEach(function(v){cards.push(v);});
