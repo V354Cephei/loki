@@ -7,6 +7,7 @@ Page({
     isDebug: true,
     cards: [], // 卡片数据，一个包含所有卡片对象的数组
     removed_cards: [], // 存放已经移除的卡片的索引数据，如果索引填充了其他卡片，需要将该索引移出
+    review_results: new Map(),      // 存放向左滑动(不会)的次数）
     transition: true, //是否开启过渡动画
     circling: true, // 是否列表循环
     rotate_deg: 90, // 整个滑动过程旋转角度
@@ -17,11 +18,10 @@ Page({
     up_height: 40, // 下层卡片下移高度，单位rpx
   },
   onLoad: function () {
-    this.generateCards(5)
+    this.generateCards();
   },
-  generateCards(num) {
-    const cards = [];
-    const results = [{
+  generateCards() {
+    const cards = [{
         title: "worth",
         body: "相当于…价值,值…钱<br>sales worth 200m pounds a year<br>每年价值2亿英镑的销售额",
       },
@@ -46,14 +46,16 @@ Page({
         body: '狂热者；热心者<br>a religious zealot<br>宗教狂热分子'
       }
     ];
-    results.forEach(function (v) {
-      cards.push(v);
-    });
 
+    let m = new Map();
+    cards.forEach(function(e){
+      m.set(e["title"], 0);
+    });
     this.setData({
       cards: cards,
       current_cursor: cards.findIndex(item => item),
-      removed_cards: []
+      removed_cards: [],
+      review_results: m
     })
   },
   onSwitch: function (e) {
@@ -139,6 +141,11 @@ Page({
       removed_cards
     });
   },
+  incRefs(t) {
+    console.log("increase refs for: " + t);
+    let i = this.data.review_results.get(t);
+    this.data.review_results.set(t, i+1);
+  },
   cardSwipe(e) {
     const {
       direction,
@@ -148,23 +155,13 @@ Page({
     
     if (direction === 'left') {
       // keep it in current list
-      console.log("swipe left, keep the card in list. ");
-      console.log("current cards length:" + this.data.cards.length);
-      console.log("removed_cards length:" + this.data.removed_cards.length);
-      // wx.showToast({
-      //   title: "不会",
-      //   icon: 'error',
-      //   duration: 100
-      // });
+      this.incRefs(this.data.cards[swiped_card_index]["title"])
     } else {
       // remove it from current list
-      console.log("swipe left, remove the card from list. ");
-      console.log("removed " + current_cursor + " " + this.data.cards[swiped_card_index].title);
       this.removeCard(swiped_card_index);
-      console.log("current cards length:" + this.data.cards.length);
-      console.log("removed_cards length:" + this.data.removed_cards.length);
     }
     if (this.data.removed_cards.length === this.data.cards.length) {
+      console.log(this.data.review_results); // output the review results
       wx.redirectTo({
         url: '/pages/student/result' + '?n=' + this.data.cards.length,
       })
