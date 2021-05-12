@@ -8,7 +8,7 @@ Page({
     cards: [], // 卡片数据，一个包含所有卡片对象的数组
     removed_cards: [], // 存放已经移除的卡片的索引数据，如果索引填充了其他卡片，需要将该索引移出
     transition: true, //是否开启过渡动画
-    circling: false, // 是否列表循环
+    circling: true, // 是否列表循环
     rotate_deg: 90, // 整个滑动过程旋转角度
     slide_duration: 200, // 手指离开屏幕后滑出界面时长，单位(ms)毫秒
     show_cards: 3, // 显示几张卡片
@@ -21,34 +21,35 @@ Page({
   },
   generateCards(num) {
     const cards = [];
-    const results = [
-        {
-          title: "worth",
-          body: "相当于…价值,值…钱<br>sales worth 200m pounds a year<br>每年价值2亿英镑的销售额",
-        },
-        {
-          title: 'get',
-          body: '获得；得到；收获<br>get a prize<br>得奖'
-        },
-        {
-          title: 'confidence',
-          body: '信任<br>build confidence in oneself<br>建立自信'
-        },
-        {
-          title: 'romance',
-          body: '浪漫故事；浪漫作品<br>a starlet of seven romances<br>拍过七部爱情电影的小女星'
-        },
-        {
-          title: 'wonderful',
-          body: '美妙的，精彩的，奇特的<br>a wonderful sight<br>奇特的景象 '
-        },
-        {
-          title: 'zealot',
-          body: '狂热者；热心者<br>a religious zealot<br>宗教狂热分子'
-        }
-      ];
-      results.forEach(function(v){cards.push(v);});
-    
+    const results = [{
+        title: "worth",
+        body: "相当于…价值,值…钱<br>sales worth 200m pounds a year<br>每年价值2亿英镑的销售额",
+      },
+      {
+        title: 'get',
+        body: '获得；得到；收获<br>get a prize<br>得奖'
+      },
+      {
+        title: 'confidence',
+        body: '信任<br>build confidence in oneself<br>建立自信'
+      },
+      {
+        title: 'romance',
+        body: '浪漫故事；浪漫作品<br>a starlet of seven romances<br>拍过七部爱情电影的小女星'
+      },
+      {
+        title: 'wonderful',
+        body: '美妙的，精彩的，奇特的<br>a wonderful sight<br>奇特的景象 '
+      },
+      {
+        title: 'zealot',
+        body: '狂热者；热心者<br>a religious zealot<br>宗教狂热分子'
+      }
+    ];
+    results.forEach(function (v) {
+      cards.push(v);
+    });
+
     this.setData({
       cards: cards,
       current_cursor: cards.findIndex(item => item),
@@ -117,6 +118,7 @@ Page({
         const {
           removed_cards
         } = this.data
+        console.log("removed event fired:" + symbol + " " + removeIndex);
         if (removed_cards.includes(parseInt(removeIndex))) return
         removed_cards.push(parseInt(removeIndex))
         this.setData({
@@ -126,21 +128,29 @@ Page({
         break
     }
   },
+  removeCard(index) {
+    const {
+      removed_cards
+    } = this.data;
+    if (removed_cards.includes(parseInt(index))) return;
+    removed_cards.push(parseInt(index));
+    this.setData({
+      ['cards[' + index +']']: null,
+      removed_cards
+    });
+  },
   cardSwipe(e) {
     const {
       direction,
       swiped_card_index,
       current_cursor
     } = e.detail
-    console.log(e.detail)
-    if (current_cursor === this.data.cards.length) {
-      wx.redirectTo({
-        url: '/pages/student/result'+'?n='+this.data.cards.length,
-      })
-    }
+    
     if (direction === 'left') {
       // keep it in current list
-      console.log("不会，保留在list中");
+      console.log("swipe left, keep the card in list. ");
+      console.log("current cards length:" + this.data.cards.length);
+      console.log("removed_cards length:" + this.data.removed_cards.length);
       // wx.showToast({
       //   title: "不会",
       //   icon: 'error',
@@ -148,19 +158,17 @@ Page({
       // });
     } else {
       // remove it from current list
-      console.log("current cards length:" + this.data.cards.length);
+      console.log("swipe left, remove the card from list. ");
       console.log("removed " + current_cursor + " " + this.data.cards[swiped_card_index].title);
-      // wx.showToast({
-      //   title: "简单",
-      //   icon: 'success',
-      //   duration: 100
-      // });
+      this.removeCard(swiped_card_index);
+      console.log("current cards length:" + this.data.cards.length);
+      console.log("removed_cards length:" + this.data.removed_cards.length);
     }
-    // wx.showToast({
-    //   title: '卡片${swiped_card_index + 1}向${direction === 'left' ? '左' : '右'}滑',
-    //   icon: 'none',
-    //   duration: 1000
-    // })
+    if (this.data.removed_cards.length === this.data.cards.length) {
+      wx.redirectTo({
+        url: '/pages/student/result' + '?n=' + this.data.cards.length,
+      })
+    }
     this.setData({
       current_cursor
     })
