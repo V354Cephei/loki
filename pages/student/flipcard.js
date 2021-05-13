@@ -142,7 +142,6 @@ Page({
     });
   },
   incRefs(t) {
-    console.log("increase refs for: " + t);
     let i = this.data.review_results.get(t);
     this.data.review_results.set(t, i+1);
   },
@@ -161,9 +160,17 @@ Page({
       this.removeCard(swiped_card_index);
     }
     if (this.data.removed_cards.length === this.data.cards.length) {
-      console.log(this.data.review_results); // output the review results
+      let hard = 0;
+      let easy = 0;
+      let mid = 0;
+      this.data.review_results.forEach(function(v){
+        if(v>1) hard += 1;
+        if(v==0) easy += 1;
+        if(v==1) mid +=1;
+      });
+      // console.log("results: hard " + hard + ",easy " + easy + ",mid " + mid);
       wx.redirectTo({
-        url: '/pages/student/result' + '?n=' + this.data.cards.length,
+        url: '/pages/student/result' + '?n=' + this.data.cards.length + "&hard=" + hard+ "&mid=" + mid + "&easy=" + easy,
       })
     }
     this.setData({

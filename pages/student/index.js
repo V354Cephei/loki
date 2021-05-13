@@ -22,7 +22,7 @@ Page({
   },
 
   openMyProgress: function(){ 
-    wx.navigateTo({ url: '/pages/course/index', }) 
+    wx.navigateTo({ url: '/pages/student/progress', }) 
   },
 
   openMyQustionList: function(){ 

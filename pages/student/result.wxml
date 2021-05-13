@@ -1,8 +1,10 @@
 <!--pages/student/result.wxml-->
 <view class="container">
-<image style="width: 80%; margin: 20rpx" src="../../assets/images/break.png"></image>
+<text style="font-size: 50rpx; color: #ea0606; margin-top: 60rpx;">今天共记忆{{n}}个单词</text>
+<text style="font-size: 50rpx; color: #ea0606;" >结果如下：</text>
+<!-- <image style="width: 80%; margin: 20rpx" src="../../assets/images/break.png"></image> -->
+<ec-canvas style="height: 500rpx; margin-bottom: 30rpx;" id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
 <!-- <text style="font-size: 50rpx; color: gold;">再接再厉</text> -->
-<text style="font-size: 50rpx; color: orange">今天消灭了{{n}}个单词</text>
 <view class="btn bg-gradient-primary mt-10" bind:tap="playAgain">不尽兴，再来</view>
 <view class="btn bg-gradient-success mt-10" bind:tap="goHome">返回主页</view>
 <view class="btn bg-gradient-info mt-10" bind:tap="openMyProgress">看学习进度</view>
