@@ -1,9 +1,42 @@
-<!--pages/rank/index.wxml-->
-<view>
-  <text>英雄榜</text>
-  <van-cell title="王者" icon="location-o" />
-  <van-cell title="钻石" icon="location-o" />
-<van-cell title="黄金" icon="location-o" />
-<van-cell title="白银" icon="location-o" />
-<van-cell title="青铜" icon="location-o" />
+
+  <view class="table">
+  <view class="tr bg-gradient-primary">
+    <view class="th">排名</view>
+    <view class="th">头像</view>
+    <view class="th">名字</view>
+    <view class="th">等级</view>
+  </view>
+    <view class="tr bg-g">
+      <view class="td">1</view>
+      <view class="td">
+        <image style="width: 50rpx;	height: 50rpx;	display: inline-block;overflow: hidden;" src="https://pic4.zhimg.com/80/v2-95ed6ea0f78292c9cad905ad117c7fcc_1440w.jpg?source=1940ef5c" mode="scaleToFill">  
+</image>
+      </view>
+      <view class="td">一德</view>
+      <view class="td">荣耀</view>
+    </view>
+    <view class="tr bg-w">
+      <view class="td">2</view>
+      <view class="td">
+        <image style="width: 50rpx;	height: 50rpx;	display: inline-block;overflow: hidden;" src="../../assets/images/avatar2.jpeg" mode="scaleToFill">  </image>
+      </view>
+      <view class="td">袁袁</view>
+      <view class="td">王者</view>
+    </view>
+    <view class="tr bg-g">
+      <view class="td">3</view>
+      <view class="td">
+        <image style="width: 50rpx;	height: 50rpx;	display: inline-block;overflow: hidden;" src="../../assets/images/avatar3.jpeg" mode="scaleToFill">  </image>
+      </view>
+      <view class="td">天宇</view>
+      <view class="td">王者</view>
+    </view>
+    <view class="tr bg-w">
+      <view class="td">3000</view>
+      <view class="td">
+        <image style="width: 50rpx;	height: 50rpx;	display: inline-block;overflow: hidden;" src="https://pic1.zhimg.com/80/v2-b6dfcc3c00478268ddada7bd8c79d187_1440w.jpg?source=1940ef5c" mode="scaleToFill">  </image>
+      </view>
+      <view class="td">不报名的你</view>
+      <view class="td">废柴</view>
+    </view>
 </view>

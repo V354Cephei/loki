@@ -121,7 +121,7 @@ Page({
    */
   openMyProgress: function () {
     wx.redirectTo({
-      url: '/pages/course/index',
+      url: '/pages/student/progress',
     })
   },
 

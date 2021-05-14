@@ -1,28 +1,39 @@
 <!--pages/student/strength.wxml-->
-<view>
-  <view><text>能力均衡图(Radar Chart)</text></view>
+<view >
+  <view class="bg-gradient-primary" style="color: white;font-weight:700;text-align:center;">竞争力分析</view>
   <!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ radarEC1 }}"></ec-canvas> -->
   <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ radarEC1 }}"></ec-canvas>
-  <van-divider
-  contentPosition="center"
-  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
->
-学科1
-</van-divider>
-  <view>
-    <text>是一个喜欢按自己的人生哲学走路的人。你不轻易改变自己的生活习惯。固执已见是你性格上的突出特点，同时也是你的主要缺点。平时温文尔雅，一旦受到触怒，你会变得令人望而生畏。</text>
+  <van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+    公共英语
+  </van-divider>
+  <view style="padding: 20rpx">
+    <text >
+    多记忆单词<br/>
+    注意非谓语动词的用法<br/>
+    注意写作中单词的拼写<br/>
+    写作时多套用固定的结构，临场发挥要注意分寸
+    </text>
   </view>
-  <van-divider
-  contentPosition="center"
-  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
-  学科2
-</van-divider>
-  <text>是一个喜欢按自己的人生哲学走路的人。你不轻易改变自己的生活习惯。固执已见是你性格上的突出特点，同时也是你的主要缺点。平时温文尔雅，一旦受到触怒，你会变得令人望而生畏。</text>
-  <van-divider
-  contentPosition="center"
-  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
->
-学科3
-</van-divider>
-  <text>是一个喜欢按自己的人生哲学走路的人。你不轻易改变自己的生活习惯。固执已见是你性格上的突出特点，同时也是你的主要缺点。平时温文尔雅，一旦受到触怒，你会变得令人望而生畏。</text>
+  <van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+    管理学
+  </van-divider>
+  <view style="padding: 20rpx">
+    <text>
+    明确管理学基础概念<br/>
+    注意现代管理学知识<br/>
+    多背诵管理学发展体系和脉络<br/>
+    关于物流管理的题目多加复习
+  </text>
+  </view>
+  <van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+    物流学
+  </van-divider>
+  <view style="padding: 20rpx">
+    <text>
+    明确物流学基础概念<br/>
+    注意现代管理学知识<br/>
+    多背诵管理学发展体系和脉络<br/>
+    关于物流管理的题目多加复习
+  </text>
+  </view>
 </view>

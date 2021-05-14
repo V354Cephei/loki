@@ -1,2 +1,57 @@
 <!--pages/student/progress.wxml-->
-<text>pages/student/progress.wxml</text>
+<!--pages/student/result.wxml-->
+<view class="container" >
+  <!-- <text style="font-size: 50rpx; color: #ea0606; margin-top: 60rpx;">学习进度</text> -->
+  <!-- <image style="width: 80%; margin: 20rpx" src="../../assets/images/break.png"></image> -->
+  <veiw class="course-card bg-gradient-primary">
+    <view class="course-card-header" >
+      <view>公共英语</view>
+      <view>进度:20%</view>
+      <!-- <view>
+        <text>日</text>
+        <text>周</text>
+        <text>月</text>
+      </view> -->
+    </view>
+    <ec-canvas style="height: 500rpx; margin-bottom: 30rpx;" id="mychart-dom-line-course1" canvas-id="mychart-line"
+      ec="{{ ec }}"></ec-canvas>
+    <view class="course-card-body">
+      <text class="progress-title">掌握情况</text>
+      <view class="divLine"></view>
+      <view class="progress-items" >
+        <view>完全掌握</view>
+        <view>200</view>
+      </view>
+      <view class="progress-items" >
+        <view>待巩固：</view>
+        <view>80</view>
+      </view>
+      <view class="progress-items" >
+        <view>待提升：</view>
+        <view>20</view>
+      </view>
+      <view class="progress-items" >
+        <view>未复习：</view>
+        <view>800</view>
+      </view>
+    </view>
+  </veiw>
+  <veiw class="course-card bg-gradient-info">
+    <view class="course-card-header" >
+      <view>管理学</view>
+      <view>80%</view>
+      <!-- <view>
+        <text>日</text>
+        <text>周</text>
+        <text>月</text>
+      </view> -->
+    </view>
+    <ec-canvas style="height: 500rpx; margin-bottom: 30rpx;" id="mychart-dom-line-course2" canvas-id="mychart-line"
+      ec="{{ ec }}"></ec-canvas>
+    <text>掌握情况</text>
+    <text style="color: white">完全掌握：200</text>
+    <text style="color: white">待巩固：80</text>
+    <text style="color: white">待提升：20</text>
+    <text style="color: white">未复习：900</text>
+  </veiw>
+</view>

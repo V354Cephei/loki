@@ -12,7 +12,7 @@ function initRadarChart(canvas, width, height, dpr) {
 
   var option = {
     // backgroundColor: "#ffffff",
-    color: ["#37A2DA", "#FF9F7F"],
+    color: ["#f53939", "#FF9F7F"],
     xAxis: {
       show: false
     },
@@ -22,41 +22,30 @@ function initRadarChart(canvas, width, height, dpr) {
     radar: {
       // shape: 'circle',
       indicator: [{
-        name: '食品',
-        max: 500
+        name: '公共英语',
+        max: 100
       },
       {
-        name: '玩具',
-        max: 500
+        name: '管理学',
+        max: 100
       },
       {
-        name: '服饰',
-        max: 500
-      },
-      {
-        name: '绘本',
-        max: 500
-      },
-      {
-        name: '医疗',
-        max: 500
-      },
-      {
-        name: '门票',
-        max: 500
+        name: '物流学',
+        max: 100
       }
-      ]
+      ],
+      // radius: 80
     },
     series: [{
-      name: '预算 vs 开销',
+      
       type: 'radar',
+      tooltip: {
+        trigger: 'item'
+    },
+    areaStyle: {},
       data: [{
-        value: [430, 340, 500, 300, 490, 400],
-        name: '预算'
-      },
-      {
-        value: [300, 430, 150, 300, 420, 250],
-        name: '开销'
+        value: [60, 70, 90],
+        // name: '预算'
       }
       ]
     }]

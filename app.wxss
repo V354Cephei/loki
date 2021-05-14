@@ -1,7 +1,7 @@
 /**app.wxss**/
 .container {
   position: absolute;
-  top: 0;
+  top: 10rpx;
   bottom: 0;
   left: 0;
   right: 0;
@@ -10,7 +10,8 @@
   align-items: center;
   /* justify-content: space-between; */
   box-sizing: border-box;
-  background-color: #ffffff;
+  /* background-color: #E5E5E5; */
+  background-color: #FFFFFF;
 }
 
 .picker-pos{
