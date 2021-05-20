@@ -1,6 +1,9 @@
 # Apple trash file
 .DS_Store
 
+# npm folder
+miniprogram_npm
+
 # Logs
 logs
 *.log

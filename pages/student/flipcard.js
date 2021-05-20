@@ -19,6 +19,39 @@ Page({
   },
   onLoad: function () {
     this.generateCards();
+    this.getWords();
+  },
+  getWords: function() {
+    console.log("called getWords");
+    var that = this;//这里注意，要不然setData不可用
+    wx.request({
+      url: 'http://10.88.1.81:5000/words',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log("success in remote call.");
+        console.log(res.data);
+        let m = new Map();
+        const cards = res.data;
+        cards.forEach(function(e){
+          m.set(e["word"], 0);
+        });
+        that.setData({
+          cards: cards,
+          current_cursor: cards.findIndex(item => item),
+          removed_cards: [],
+          review_results: m
+        });
+      },
+      fail:function(){
+        console.log("fail");
+      },
+      complete: function () {
+        console.log("complete");
+      }
+    });
+    
   },
   generateCards() {
     const cards = [{
@@ -154,7 +187,7 @@ Page({
     
     if (direction === 'left') {
       // keep it in current list
-      this.incRefs(this.data.cards[swiped_card_index]["title"])
+      this.incRefs(this.data.cards[swiped_card_index]["word"])
     } else {
       // remove it from current list
       this.removeCard(swiped_card_index);

@@ -6,10 +6,13 @@
         <text>转本词汇</text>
     </view>
     <view class="card-body">
-        <text id="item1" style="font-size: 120rpx; color: #FFFFFF;">{{card.title}}</text>
-        <mp-icon icon="voice" color="white" size="{{25}}" style="padding: 0 0 20rpx 0;"></mp-icon>
+        <text id="item1" style="font-size: 100rpx; color: #FFFFFF;">{{card.word}}</text>
+        <text id="item1" style="color: #FFFFFF; font-size: 40rpx;">[{{card.pr}}] </text>
+        <!-- <text id="item1" style="color: #FFFFFF;"></text> -->
+        <!-- <mp-icon icon="voice" color="white" size="{{25}}" style="padding: 0 0 20rpx 0;"></mp-icon> -->
         <!-- <scroll-view scroll-y style="height: 300rpx; background-color: red"> -->
-            <rich-text hidden="{{isHidden}}" nodes="{{card.body}}" style="color: #FFFFFF;"></rich-text>
+            <rich-text hidden="{{isHidden}}" nodes="{{card.pos[0]['sem'][0]['df']}}" style="color: #FFFFFF;"></rich-text>
+            <rich-text hidden="{{isHidden}}" nodes="{{card.pos[0]['sem'][0]['eg'][0]['en']}}" style="color: #FFFFFF;">{{card.pos[0]['sem'][0]['eg'][0]['cn']}}</rich-text>
         <!-- </scroll-view> -->
     </view>
 </view>
