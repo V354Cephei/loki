@@ -1,0 +1,6 @@
+<!--pages/index/not_registered.wxml-->
+<!-- http://cdn.mamba-edu.cn/mamba_ad_01.jpg -->
+<view class="test-bg">
+    <image src="http://cdn.mamba-edu.cn/mamba_ad_01.jpg" class="bg-image" mode="scaleToFill"></image>
+  </view>
+  

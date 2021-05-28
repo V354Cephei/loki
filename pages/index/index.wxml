@@ -14,8 +14,8 @@
       </block> -->
     </block>
     <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称PF </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称UI </button>
       <view wx:else> 请使用1.4.4及以上版本基础库 </view>
     </block>
     <block wx:else>
@@ -25,20 +25,29 @@
   </view>
   <!-- Quick Start -->
   <!-- 页面 -->
-<view>
-  <mp-cells title="页面入口测试" >
-    <mp-cell link hover value="学生页面(student)" footer="" url="../student/index">
-    </mp-cell>
-    <mp-cell link hover value="班主任页面(advisor)" footer="" url="../advisor/index">
-    </mp-cell>
-    <mp-cell link value="专业课老师页面(teacher)" footer="" url="../teacher/index">
-    </mp-cell>
-    <mp-cell link hover value="学校管理员页面(school-admin)" footer="" url="../sadmin/index">
-    </mp-cell>
-    <mp-cell link hover value="注册页面(register)" footer="" url="../user/register">
-    </mp-cell>
-  </mp-cells>
-  <!-- <mp-cells title="其它页面">
+  <view class="btn bg-gradient-primary mt-10">登陆</view>
+  <view>
+    <mp-cells title="页面入口测试">
+      <mp-cell link hover value="学生页面(student)" footer="" url="../student/index">
+      </mp-cell>
+      <mp-cell link hover value="班主任页面(advisor)" footer="" url="../advisor/index">
+      </mp-cell>
+      <mp-cell link value="专业课老师页面(teacher)" footer="" url="../teacher/index">
+      </mp-cell>
+      <mp-cell link hover value="学校管理员页面(school-admin)" footer="" url="../sadmin/index">
+      </mp-cell>
+    </mp-cells>
+    <mp-cells title="用户辅助页面">
+      <mp-cell link hover value="注册页面(register)" footer="" url="../user/register">
+      </mp-cell>
+      <mp-cell link hover value="抱歉页面(sorry)" footer="" url="../index/sorry">
+      </mp-cell>
+      <mp-cell link hover value="验证页面(verify)" footer="" url="../index/verify">
+      </mp-cell>
+      <mp-cell link hover value="报名广告(ad)" footer="" url="../index/not_registered">
+      </mp-cell>
+    </mp-cells>
+    <!-- <mp-cells title="其它页面">
     <mp-cell link value="课程进度页(course)" footer="" url="../course/index">
     </mp-cell>
     <mp-cell link value="知识点记忆页(repetition)" footer="" url="../repetition/index">
@@ -50,5 +59,6 @@
     <mp-cell link value="logs" footer="" url="../logs/logs">
     </mp-cell>
   </mp-cells> -->
-</view>
+  </view>
+  
 </view>

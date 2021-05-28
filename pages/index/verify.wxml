@@ -1,0 +1,20 @@
+<!--pages/index/verify.wxml-->
+<view class="container">
+  <text style="font-size: 50rpx; color: #ea0606; margin-top: 60rpx;">验证页面</text>
+  <view class="weui-cells__title">请输入注册时填写的手机号</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <input class="weui-input" type="number" maxlength="11" bindinput="mobileChange" placeholder="手机号" />
+    </view>
+  </view>
+  <!-- <text>输入验证码</text> -->
+  <view class="weui-cells__title">请输入验证码</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <input class="weui-input" type="text" bindinput="codeChange" placeholder="验证码" />
+    </view>
+  </view>
+  <view class="btn bg-gradient-primary mt-10" bindtap="verify">验证</view>
+  <text></text>
+  <view class="btn bg-gradient-secondary mt-10" bindtap="">未注册学员请点击</view>
+</view>

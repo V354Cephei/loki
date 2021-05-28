@@ -1,15 +1,11 @@
-// pages/home_advisor/index.js
+// pages/index/not_registered.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+
   },
 
   /**
@@ -66,12 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 添加学员
-   */
-  addStudent: function(){ 
-    wx.navigateTo({ url: '/pages/advisor/add_student', }) 
-  },
+  }
 })

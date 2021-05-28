@@ -8,7 +8,8 @@
       <open-data type="userNickName"></open-data>
       <view style="align-items: center; display: flex; flex-direction: row;">
         <image class="badge" src="../../assets/images/L1.jpg"></image>
-        <text style="padding: 5rpx">白银圣斗士</text>
+        <text style="padding: 5rpx">{{ userInfo['name']}}</text>
+        <text style="padding: 5rpx">{{ userInfo['points']}}</text>
       </view>
       
     </block>

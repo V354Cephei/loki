@@ -6,13 +6,13 @@
         <text>转本词汇</text>
     </view>
     <view class="card-body">
-        <text id="item1" style="font-size: 100rpx; color: #FFFFFF;">{{card.word}}</text>
-        <text id="item1" style="color: #FFFFFF; font-size: 40rpx;">[{{card.pr}}] </text>
+        <rich-text  id="item1" style="font-size: 100rpx; color: #FFFFFF;">{{card.word}}</rich-text >
+        <rich-text  id="item1" style="color: #FFFFFF; font-size: 40rpx;">[{{card.pr}}] </rich-text >
         <!-- <text id="item1" style="color: #FFFFFF;"></text> -->
         <!-- <mp-icon icon="voice" color="white" size="{{25}}" style="padding: 0 0 20rpx 0;"></mp-icon> -->
         <!-- <scroll-view scroll-y style="height: 300rpx; background-color: red"> -->
-            <rich-text hidden="{{isHidden}}" nodes="{{card.pos[0]['sem'][0]['df']}}" style="color: #FFFFFF;"></rich-text>
-            <rich-text hidden="{{isHidden}}" nodes="{{card.pos[0]['sem'][0]['eg'][0]['en']}}" style="color: #FFFFFF;">{{card.pos[0]['sem'][0]['eg'][0]['cn']}}</rich-text>
+            <rich-text nodes="{{card.pos[0]['sem'][0]['df']}}" style="color: #FFFFFF;visibility:{{isHidden}}"></rich-text>
+            <rich-text nodes="{{card.pos[0]['sem'][0]['eg'][0]['en']}}" style="color: #FFFFFF;visibility:{{isHidden}}">{{card.pos[0]['sem'][0]['eg'][0]['cn']}}</rich-text>
         <!-- </scroll-view> -->
     </view>
 </view>

@@ -1,0 +1,8 @@
+<!--pages/index/sorry.wxml-->
+<view class="container">
+  <text style="font-size: 50rpx; color: #ea0606; margin-top: 60rpx;">抱歉！</text>
+  <text style="font-size: 50rpx; color: #ea0606; margin-top: 60rpx;">本小程序仅供已报名学员使用</text>
+  <view class="btn bg-gradient-primary mt-10" bindtap="">我要报名</view>
+  <view class="btn bg-gradient-warning mt-10" bindtap="">我已报名</view>
+
+</view>

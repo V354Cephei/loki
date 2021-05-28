@@ -25,8 +25,9 @@ Page({
     console.log("called getWords");
     var that = this;//这里注意，要不然setData不可用
     wx.request({
-      url: 'http://10.88.1.81:5000/words',
+      url: app.globalData.apiURL + '/words',
       header: {
+        'cookie': wx.getStorageSync("sessionid"),
         'content-type': 'application/json' // 默认值
       },
       success(res) {

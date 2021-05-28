@@ -24,6 +24,8 @@
   <!-- Quick Start -->
   <!-- <van-button type="primary" size="normal" bindtap="openFlipCard">打卡</van-button> -->
   <view class="btn bg-gradient-primary mt-10" bindtap="" >每日跟进</view>
+  <view class="btn bg-gradient-primary mt-10" bindtap="" >布置作业</view>
   <view class="btn bg-gradient-secondary mt-10" bindtap="">学员评估</view>
   <view class="btn bg-gradient-secondary mt-10" bindtap="">问题解答</view>
+  <view class="btn bg-gradient-primary mt-10" bindtap="addStudent" >添加学员</view>
 </view>

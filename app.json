@@ -15,7 +15,11 @@
     "pages/questions/index",
     "pages/student/result",
     "pages/users/register",
-    "pages/student/progress"
+    "pages/student/progress",
+    "pages/index/sorry",
+    "pages/index/verify",
+    "pages/advisor/add_student",
+    "pages/index/not_registered"
   ],
   "window": {
     "backgroundTextStyle": "light",

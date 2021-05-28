@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    isHidden: true
+    isHidden: "hidden"
   },
 
   /**
@@ -23,7 +23,7 @@ Component({
      */
     showBody() {
       this.setData({
-        isHidden: false
+        isHidden: "visible"
       });
     }
   },
