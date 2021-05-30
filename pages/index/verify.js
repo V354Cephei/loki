@@ -100,8 +100,8 @@ Page({
                   if (cookie != null) {
                     wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
                   }
-                  app.globalData.isLogin = true;
                   app.globalData.userInfo = res.data.userInfo;
+                  app.globalData.isLogin = true;
                   // 验证成功，跳转到对应页面
                   console.log("verify success userinfo: ", res.data.userInfo);
                   let utype = res.data.userInfo["utype"]

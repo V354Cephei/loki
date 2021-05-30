@@ -25,7 +25,9 @@
   </view>
   <!-- Quick Start -->
   <!-- 页面 -->
-  <view class="btn bg-gradient-primary mt-10">登陆</view>
+  <view wx:if="{{!isLogin}}" class="btn bg-gradient-primary mt-10" bindtap="tapLogin">登陆</view>
+  <view wx:else class="btn bg-gradient-primary mt-10" bindtap="tapLogin">打开主页</view>
+  <view wx:if="{{!isLogin}}" class="btn bg-gradient-info mt-10" bindtap="tapVerify">验证</view>
   <view>
     <mp-cells title="页面入口测试">
       <mp-cell link hover value="学生页面(student)" footer="" url="../student/index">

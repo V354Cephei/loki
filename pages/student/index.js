@@ -32,31 +32,13 @@ Page({
     wx.navigateTo({ url: '/pages/student/strength', }) 
   },
 
-  countClick: function() {
-    this.setData({
-      count : this.data.count + 1
-    });
-  },
-  // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad() {
-    console.log("=====Student Index ======");
     console.log(app.globalData.userInfo);
     console.log(app.globalData.isLogin);
     this.setData({
       userInfo: app.globalData.userInfo,
       isLogin: app.globalData.isLogin
     })
-    console.log("=====Student Index ======");
-    // if (wx.getUserProfile) {
-    //   this.setData({
-    //     canIUseGetUserProfile: true
-    //   })
-    // }
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
