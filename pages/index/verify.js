@@ -7,6 +7,7 @@ Page({
    */
   data: {
     userInfo: {},
+    userData: {},
     mobile: null,
     code: null,
     loginCode: null
@@ -52,7 +53,8 @@ Page({
     wx.getUserProfile({
       desc: '需要您的微信信息来绑定小程序', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res)
+        console.log(res);
+        app.globalData.userInfo = res.userInfo;
         that.setData({
           userInfo: res.userInfo,
         });
@@ -74,8 +76,8 @@ Page({
                   userInfo: that.data.userInfo
                 },
                 success: function (res) {
-                  // if success, set the userInfo
-                  // 后续页面根据userInfo参数进行判定
+                  // if success, set the userData
+                  // 后续页面根据userData参数进行判定
                   console.log("verify request succeed.");
                   console.log(res);
                   if (res.data.code == 1000) {
@@ -100,11 +102,11 @@ Page({
                   if (cookie != null) {
                     wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
                   }
-                  app.globalData.userInfo = res.data.userInfo;
+                  app.globalData.userData = res.data.userData;
                   app.globalData.isLogin = true;
                   // 验证成功，跳转到对应页面
-                  console.log("verify success userinfo: ", res.data.userInfo);
-                  let utype = res.data.userInfo["utype"]
+                  console.log("verify success userinfo: ", res.data.userData);
+                  let utype = res.data.userData["utype"]
                   switch(utype){
                     case 0:
                       wx.redirectTo({
@@ -127,7 +129,6 @@ Page({
                   }
                 },
                 fail: function (res) {
-                  console.log("wx.request failed");
                   console.log(res);
                 }
               })
@@ -138,5 +139,10 @@ Page({
         })
       }
     });
+  },
+  tapNotRegistered: function () {
+    wx.redirectTo({
+      url: '/pages/index/not_registered',
+    })
   }
 })

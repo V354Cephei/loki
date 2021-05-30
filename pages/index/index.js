@@ -6,6 +6,7 @@ Page({
   data: {
     isLogin: false,
     userInfo: {},
+    userData: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: true,
@@ -21,16 +22,16 @@ Page({
   onLoad() {
     console.log("Index: onLoad");
     console.log(app.globalData.isLogin);
-    console.log(app.globalData.userInfo);
+    console.log(app.globalData.userData);
     app.watch(this.cbGetUserData);
     
     if (app.globalData.isLogin) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        userData: app.globalData.userData,
         isLogin: app.globalData.isLogin
       })
       if(this.isLogin){
-        this.gotoUserIndex(userInfo["utype"]);
+        this.gotoUserIndex(userData["utype"]);
       }
     }
     // if (wx.getUserProfile) {
@@ -43,9 +44,9 @@ Page({
     // set page data here. 
     this.setData({
       isLogin: value,
-      userInfo: app.globalData.userInfo
+      userData: app.globalData.userData
     });
-    this.gotoUserIndex(app.globalData.userInfo['utype']);
+    this.gotoUserIndex(app.globalData.userData['utype']);
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -54,6 +55,7 @@ Page({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         console.log(res)
+        app.globalData.userInfo = res.userInfo;
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -72,6 +74,14 @@ Page({
                   console.log(res);
                   wx.removeStorageSync('sessionid')
                   wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
+                  if (res.data.code == 1001){
+                    wx.redirectTo({
+                      url: 'page/index/verify',
+                    });
+                    return;
+                  }
+                  app.globalData.userData = res.data.userData;
+                  app.globalData.isLogin = true;
                 }
               })
             } else {
@@ -156,8 +166,8 @@ Page({
         code: sessionCode
       },
       success: function (res) {
-        // if success, set the userInfo
-        // 后续页面根据userInfo参数进行判定
+        // if success, set the userData
+        // 后续页面根据userData参数进行判定
         if (res.data.code == 1001) {
           wx.redirectTo({
             url: '/pages/index/verify',
@@ -168,10 +178,10 @@ Page({
         if (cookie != null) {
           wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
         }
-        app.globalData.userInfo = res.data.userInfo;
+        app.globalData.userData = res.data.userData;
         app.globalData.isLogin = true;
         // 登陆成功，跳转到对应主页
-        let utype = res.data.userInfo["utype"]
+        let utype = res.data.userData["utype"]
         that.gotoUserIndex(utype);
       },
       fail: function (res) {

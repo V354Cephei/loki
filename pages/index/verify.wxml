@@ -16,5 +16,5 @@
   </view>
   <view class="btn bg-gradient-primary mt-10" bindtap="verify">验证</view>
   <text></text>
-  <view class="btn bg-gradient-secondary mt-10" bindtap="">未注册学员请点击</view>
+  <view class="btn bg-gradient-secondary mt-10" bindtap="tapNotRegistered">我还未注册</view>
 </view>

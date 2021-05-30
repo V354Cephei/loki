@@ -6,6 +6,7 @@ Page({
    */
   data: {
     userInfo: {},
+    userData: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,

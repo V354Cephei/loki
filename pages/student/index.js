@@ -6,6 +6,7 @@ Page({
   data: {
     isLogin: false,
     userInfo: {},
+    userData: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
@@ -33,10 +34,11 @@ Page({
   },
 
   onLoad() {
-    console.log(app.globalData.userInfo);
-    console.log(app.globalData.isLogin);
+    // console.log(app.globalData.userData);
+    // console.log(app.globalData.isLogin);
     this.setData({
       userInfo: app.globalData.userInfo,
+      userData: app.globalData.userData,
       isLogin: app.globalData.isLogin
     })
   },
@@ -46,6 +48,7 @@ Page({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         console.log(res)
+        app.globalData.userInfo = res.userInfo;
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -56,6 +59,7 @@ Page({
   getUserInfo(e) {
     // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
     console.log(e)
+    app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true

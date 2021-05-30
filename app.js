@@ -1,7 +1,8 @@
 // app.js
 App({
   globalData: {
-    userInfo: null,
+    userInfo: {}, // user information from wx api
+    userData: {},   // user information from our api
     isLogin: false,
     apiURL: "http://10.64.1.81:5000"
   },
@@ -21,8 +22,8 @@ App({
         code: sessionCode
       },
       success: function(res) {
-        // if success, set the userInfo
-        // 后续页面根据userInfo参数进行判定
+        // if success, set the userData
+        // 后续页面根据userData参数进行判定
         console.log("getUserData succeed.");
         console.log(res);
         if (res.data.code == 1001){
@@ -35,7 +36,7 @@ App({
         if (cookie != null) {
           wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
         }
-        that.globalData.userInfo = res.data.userInfo;
+        that.globalData.userData = res.data.userData;
         that.globalData.isLogin = true;
       },
       fail: function(res) {
