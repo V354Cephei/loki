@@ -20,17 +20,13 @@ Page({
     })
   },
   onLoad() {
-    console.log("Index: onLoad");
-    console.log(app.globalData.isLogin);
-    console.log(app.globalData.userData);
     app.watch(this.cbGetUserData);
-    
     if (app.globalData.isLogin) {
       this.setData({
         userData: app.globalData.userData,
         isLogin: app.globalData.isLogin
       })
-      if(this.isLogin){
+      if (this.isLogin) {
         this.gotoUserIndex(userData["utype"]);
       }
     }
@@ -62,7 +58,6 @@ Page({
         })
         wx.login({
           success(res) {
-            console.log(res);
             if (res.code) {
               //发起网络请求
               wx.request({
@@ -71,32 +66,47 @@ Page({
                   code: res.code,
                 },
                 success: function (res) {
-                  console.log(res);
                   wx.removeStorageSync('sessionid')
                   wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
-                  if (res.data.code == 1001){
-                    wx.redirectTo({
-                      url: 'page/index/verify',
+                  if (res.data.code == 1001) {
+                    wx.reLaunch({
+                      url: '/page/index/verify',
                     });
-                    return;
                   }
                   app.globalData.userData = res.data.userData;
                   app.globalData.isLogin = true;
+                },
+                fail: function () {
+                  wx.reLaunch({
+                    url: '/pages/index/404',
+                  })
                 }
               })
             } else {
-              console.log('登录失败！' + res.errMsg)
+              console.log('wx.login未得到code，' + res.errMsg);
+              wx.reLaunch({
+                url: '/pages/index/index',
+              });
             }
+          },
+          fail: function() {
+            console.log('wx.login调用失败！');
+            wx.reLaunch({
+              url: '/pages/index/index',
+            })
           }
         })
-
+      },
+      fail: function () {
+        console.log("wx.getUserProfile failed.");
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
       }
     })
   },
   getUserInfo(e) {
     // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    console.log("XXXX: called getUserInfo");
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
@@ -129,27 +139,27 @@ Page({
       url: '/pages/index/verify',
     })
   },
-  gotoUserIndex: function(utype) {
-        switch (utype) {
-          case 0:
-            wx.redirectTo({
-              url: '/pages/student/index',
-            });
-            break;
-          case 1:
-            wx.redirectTo({
-              url: '/pages/advisor/index',
-            })
-            break;
-          case 101:
-            wx.redirectTo({
-              url: '/pages/sadmin/index',
-            });
-            break;
-          default:
-            console.log("wxLogin returned unkonwn user type. please contact admin.")
-            break;
-        };
+  gotoUserIndex: function (utype) {
+    switch (utype) {
+      case 0:
+        wx.redirectTo({
+          url: '/pages/student/index',
+        });
+        break;
+      case 1:
+        wx.redirectTo({
+          url: '/pages/advisor/index',
+        })
+        break;
+      case 101:
+        wx.redirectTo({
+          url: '/pages/sadmin/index',
+        });
+        break;
+      default:
+        console.log("wxLogin returned unkonwn user type. please contact admin.")
+        break;
+    };
   },
   getUserData: function (sessionCode) {
     let that = this;
@@ -186,7 +196,9 @@ Page({
       },
       fail: function (res) {
         console.log("wx.request failed");
-        console.log(res);
+        wx.reLaunch({
+          url: '/pages/index/404',
+        })
       }
     })
   },

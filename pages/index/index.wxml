@@ -48,6 +48,8 @@
       </mp-cell>
       <mp-cell link hover value="报名广告(ad)" footer="" url="../index/not_registered">
       </mp-cell>
+      <mp-cell link hover value="404" footer="" url="../index/404">
+      </mp-cell>
     </mp-cells>
     <!-- <mp-cells title="其它页面">
     <mp-cell link value="课程进度页(course)" footer="" url="../course/index">

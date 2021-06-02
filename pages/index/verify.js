@@ -53,7 +53,7 @@ Page({
     wx.getUserProfile({
       desc: '需要您的微信信息来绑定小程序', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res);
+        // console.log(res);
         app.globalData.userInfo = res.userInfo;
         that.setData({
           userInfo: res.userInfo,
@@ -64,7 +64,7 @@ Page({
         wx.login({
           success(res) {
             if (res.code) {
-              console.log("verify api: ", that.data.mobile, that.data.code, that.data.userInfo);
+              // console.log("verify api: ", that.data.mobile, that.data.code, that.data.userInfo);
               wx.request({
                 url: verifyURL,
                 method: "POST",
@@ -78,12 +78,12 @@ Page({
                 success: function (res) {
                   // if success, set the userData
                   // 后续页面根据userData参数进行判定
-                  console.log("verify request succeed.");
-                  console.log(res);
+                  // console.log("verify request succeed.");
+                  // console.log(res);
                   if (res.data.code == 1000) {
                     // 验证失败
                     // 后期能返回各个校区联系人信息
-                    console.log(res.data.msg);
+                    // console.log(res.data.msg);
                     wx.showModal({
                       title: '您输入的手机号或验证码错误!',
                       content: '如果不知道验证码请与你的报名人员联系。',
@@ -105,7 +105,7 @@ Page({
                   app.globalData.userData = res.data.userData;
                   app.globalData.isLogin = true;
                   // 验证成功，跳转到对应页面
-                  console.log("verify success userinfo: ", res.data.userData);
+                  // console.log("verify success userinfo: ", res.data.userData);
                   let utype = res.data.userData["utype"]
                   switch(utype){
                     case 0:
@@ -129,13 +129,26 @@ Page({
                   }
                 },
                 fail: function (res) {
-                  console.log(res);
+                  console.log("Verify wx.request failed.");
+                  wx.reLaunch({
+                    url: '/pages/index/404',
+                  })
                 }
               })
             } else {
               console.log("wx.login失败, " + res.errMsg);
             }
+          },
+          fail: function() {
+            wx.reLaunch({
+              url: '/pages/index/verify',
+            })
           }
+        })
+      },
+      fail: function() {
+        wx.reLaunch({
+          url: '/pages/index/verify',
         })
       }
     });

@@ -19,7 +19,8 @@
     "pages/index/sorry",
     "pages/index/verify",
     "pages/advisor/add_student",
-    "pages/index/not_registered"
+    "pages/index/not_registered",
+    "pages/index/404"
   ],
   "window": {
     "backgroundTextStyle": "light",

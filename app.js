@@ -1,15 +1,16 @@
 // app.js
+var log = require('./logs.js')
+
 App({
   globalData: {
     userInfo: {}, // user information from wx api
     userData: {},   // user information from our api
     isLogin: false,
-    apiURL: "http://10.64.1.81:5000"
+    apiURL: "http://192.168.0.102:5000"
   },
   getUserData: function(sessionCode) {
     let that = this;
     let loginURL = this.globalData.apiURL + '/user/wxlogin';
-    console.log("getUserData loginURL: ", loginURL);
     var header = {
       'content-type': 'application/json; charset=utf-8',
       'cookie': wx.getStorageSync("sessionid")
@@ -24,8 +25,6 @@ App({
       success: function(res) {
         // if success, set the userData
         // 后续页面根据userData参数进行判定
-        console.log("getUserData succeed.");
-        console.log(res);
         if (res.data.code == 1001){
           wx.redirectTo({
             url: '/pages/index/verify',
@@ -41,7 +40,9 @@ App({
       },
       fail: function(res) {
         console.log("wx.request failed");
-        console.log(res);
+        wx.reLaunch({
+          url: '/pages/index/404',
+        });
       }
     })
   },

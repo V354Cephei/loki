@@ -1,0 +1,6 @@
+<!--pages/index/404.wxml-->
+<!-- http://cdn.mamba-edu.cn/loki_404.png -->
+<view class="test-bg">
+  <image src="http://cdn.mamba-edu.cn/loki_404.png" class="bg-image" mode="scaleToFill"></image>
+  <view style="position: absolute;z-index: 1; top: 1200rpx; left: 100rpx; background-color: black; opacity: 0.2;" class="btn" bindtap="openIndex">返回</view>
+</view>
